@@ -511,6 +511,8 @@ function App() {
 
       {/* === Mobile Menu === */}
       <div className="mobile-overlay" id="mobileMenu">
+          <button className="mobile-close-btn" onClick={handleHamburgerClick}>✕</button>
+
         <ul className="mobile-nav-links">
           <li><a href="#about" onClick={closeMobile}>About</a></li>
           <li><a href="#services" onClick={closeMobile}>Services</a></li>
@@ -519,7 +521,7 @@ function App() {
           <li><a href="#testimonials" onClick={closeMobile}>Reviews</a></li>
           <li><a href="#contact" onClick={closeMobile}>Contact</a></li>
         </ul>
-        <div className="mobile-nav-footer"><p>hello@ccycode.dz</p></div>
+        <div className="mobile-nav-footer"><p>hello@Cycode.dz</p></div>
       </div>
 
       {/* === Hero Section === */}
@@ -554,16 +556,25 @@ function App() {
       </section>
 
       {/* === Marquee === */}
-      <div className="marquee-section">
-        <div className="marquee-track">
-          {['Cyber Security', 'Game Development', 'Artificial Intelligence', 'Mobile Apps', 'Web Applications', 'Cloud Infrastructure'].map((t, i) => (
-            <React.Fragment key={i}>
-              <span className={`marquee-item ${i % 2 !== 0 ? 'highlight' : ''}`}>{t} <span className="sep"></span></span>
-            </React.Fragment>
-          ))}
-        </div>
-      </div>
-
+    <div className="marquee-section">
+  <div className="marquee-track">
+    {/* 🔁 المجموعة الأولى */}
+    {['Cyber Security', 'Game Development', 'Artificial Intelligence', 'Mobile Apps', 'Web Applications', 'Cloud Infrastructure'].map((t, i) => (
+      <React.Fragment key={i}>
+        <span className={`marquee-item ${i % 2 !== 0 ? 'highlight' : ''}`}>{t}</span>
+        <span className="sep"></span>
+      </React.Fragment>
+    ))}
+    
+    {/* 🔁 المجموعة الثانية (نفس الكلام) */}
+    {['Cyber Security', 'Game Development', 'Artificial Intelligence', 'Mobile Apps', 'Web Applications', 'Cloud Infrastructure'].map((t, i) => (
+      <React.Fragment key={`dup-${i}`}>
+        <span className={`marquee-item ${i % 2 !== 0 ? 'highlight' : ''}`}>{t}</span>
+        <span className="sep"></span>
+      </React.Fragment>
+    ))}
+  </div>
+</div>
       {/* === About === */}
       <section className="section" id="about">
         <div className="container">
